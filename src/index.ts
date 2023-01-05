@@ -11,7 +11,7 @@ app.get('/', async (_req, res) => {
     res.status(200).json({getUsers})
 })
 
-app.post('/', async (req, res) => {
+app.post('/users', async (req, res) => {
     const { email, password } = req.body
     const users = await prisma.user.create({
         data: {
